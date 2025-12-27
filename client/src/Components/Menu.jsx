@@ -8,7 +8,7 @@ function Menu() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`${import.meta.env.VITE_API_URL}/api/cars`)
+    fetch("https://nyxara.onrender.com/api/cars")
       .then((res) => {
         if (!res.ok) {
           throw new Error("Failed to fetch cars");

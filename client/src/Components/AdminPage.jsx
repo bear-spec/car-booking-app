@@ -9,7 +9,7 @@ function AdminPage() {
 
   const fetchCars = async () => {
     try {
-      const response = await fetch(`${API_URL}/api/cars`);
+      const response = await fetch("https://nyxara.onrender.com/api/cars");
       if (!response.ok) {
         throw new Error("Failed to fetch cars");
       }

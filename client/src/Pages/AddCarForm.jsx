@@ -24,7 +24,7 @@ function AddCarForm({ onSuccess }) {
 
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_API_URL}/api/cars`,
+        "https://nyxara.onrender.com/api/cars",
         {
           method: "POST",
           headers: {
