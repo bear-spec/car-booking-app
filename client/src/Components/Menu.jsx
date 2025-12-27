@@ -74,7 +74,7 @@ function Menu() {
                 ? item.img
                 : item.image
                 ? `images/${item.image}`
-                : ""
+                : null
             }
           />
         ))}
