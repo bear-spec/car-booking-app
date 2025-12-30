@@ -87,14 +87,18 @@ function Menu() {
   useEffect(() => {
     const fetchCars = async () => {
       try {
-        const res = await fetch(`${API_URL}/api/cars`);
-        if (!res.ok) throw new Error("Backend not available");
+        const health = await fetch(`${API_URL}/health`, {
+          method: "GET",
+          cache: "no-store",
+        });
 
+        if (!health.ok) throw new Error("Backend offline");
+
+        const res = await fetch(`${API_URL}/api/cars`);
         const data = await res.json();
         setMenuData(data);
-      } catch (err) {
-        console.warn("Using local car data");
-        setMenuData(LOCAL_CARS); // ✅ fallback
+      } catch {
+        setMenuData(LOCAL_CARS);
       } finally {
         setLoading(false);
       }
