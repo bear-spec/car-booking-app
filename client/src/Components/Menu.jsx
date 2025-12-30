@@ -5,7 +5,7 @@ import BelowItems from "./BelowItems";
 const API_URL =
   import.meta.env.VITE_API_URL || "http://localhost:5000";
 
-/* Fallback static data */
+/* Fallback static dataa */
 const LOCAL_CARS = [
   {
     name: "Luxury Sedan",
